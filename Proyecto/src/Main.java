@@ -108,6 +108,138 @@ public class Main {
         buttonspanel.add(simularButton);
         buttonspanel.add(eraseButton);
 
+        //GUI FORMATTING STUFF ENDS.  button event handling below.  To see what the buttons actually do,
+        //Go to the function inside "actionPerformed"
+        andbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                makeAnd();
+            }
+        });
 
+        nandbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                makeNand();
+            }
+        });
+
+        orbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                makeOr();
+            }
+        });
+
+        norbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                makeNor();
+            }
+        });
+
+        notbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                makeNot();
+            }
+        });
+
+        xorbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                makeXor();
+            }
+        });
+
+        xnorbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                makeXnor();
+            }
+        });
+
+        coneccionesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                makeConnection();
+            }
+        });
+
+
+        startButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                makeStart();
+            }
+        });
+
+        endButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                makeEnd();
+            }
+        });
+        simularButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                simulate();
+            }
+        });
+
+        eraseButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+
+                makeErase();
+            }
+        });
+
+
+        frame.setVisible(true);
+    }
+
+    //self-explanatory functions below
+    void makeAnd() {
+        mode = "And";
+    }
+
+    void makeNand() {
+        mode = "Nand";
+    }
+
+    void makeOr() {
+        mode = "Or";
+    }
+
+    void makeNor() {
+        mode = "Nor";
+    }
+
+    void makeNot() {
+        mode = "Not";
+    }
+
+    void makeXor() {
+        mode = "Xor";
+    }
+
+    void makeXnor() {
+        mode = "Xnor";
+    }
+
+    void makeConnection() {
+        mode = "choosingOutput";
+        showInputs = false;
+        showOutputs = true;
+        drawPanel.repaint(); //repaint = refrescar la interfaz
+    }
+
+    void makeStart() {
+        mode = "ENTRADA";
+    }
+
+    void makeEnd() {
+        mode = "SALIDA";
+    }
+
+    void makeErase() {
+        mode = "erase";
     }
 }
