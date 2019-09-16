@@ -15,7 +15,7 @@ public class Main {
     static Output selectedOutput = null;
 
     //Ventana:
-    static JFrame frame = new JFrame("");
+    private JFrame frame = new JFrame("");
     static Screen drawPanel = new Screen();
 
     Main() {
@@ -33,7 +33,7 @@ public class Main {
 
         JButton andbutton = new JButton();
         try {
-            Image img = ImageIO.read(getClass().getResource("./and.gif"));
+            Image img = ImageIO.read(getClass().getResource("img./and.gif"));
             andbutton.setIcon(new ImageIcon(img));
         } catch (Exception ex) {
             System.out.println(ex);
@@ -41,7 +41,7 @@ public class Main {
 
         JButton nandbutton = new JButton();
         try {
-            Image img = ImageIO.read(getClass().getResource("./nand.gif"));
+            Image img = ImageIO.read(getClass().getResource("img./nand.gif"));
             nandbutton.setIcon(new ImageIcon(img));
         } catch (Exception ex) {
             System.out.println(ex);
@@ -49,7 +49,7 @@ public class Main {
 
         JButton orbutton = new JButton();
         try {
-            Image img = ImageIO.read(getClass().getResource("./or.gif"));
+            Image img = ImageIO.read(getClass().getResource("img./or.gif"));
             orbutton.setIcon(new ImageIcon(img));
         } catch (Exception ex) {
             System.out.println(ex);
@@ -57,7 +57,7 @@ public class Main {
 
         JButton norbutton = new JButton();
         try {
-            Image img = ImageIO.read(getClass().getResource("./nor.gif"));
+            Image img = ImageIO.read(getClass().getResource("img./nor.gif"));
             norbutton.setIcon(new ImageIcon(img));
         } catch (Exception ex) {
             System.out.println(ex);
@@ -65,7 +65,7 @@ public class Main {
 
         JButton notbutton = new JButton();
         try {
-            Image img = ImageIO.read(getClass().getResource("./not.gif"));
+            Image img = ImageIO.read(getClass().getResource("img./not.gif"));
             notbutton.setIcon(new ImageIcon(img));
         } catch (Exception ex) {
             System.out.println(ex);
@@ -73,7 +73,7 @@ public class Main {
 
         JButton xorbutton = new JButton();
         try {
-            Image img = ImageIO.read(getClass().getResource("./xor.gif"));
+            Image img = ImageIO.read(getClass().getResource("img./xor.gif"));
             xorbutton.setIcon(new ImageIcon(img));
         } catch (Exception ex) {
             System.out.println(ex);
@@ -81,7 +81,7 @@ public class Main {
 
         JButton xnorbutton = new JButton();
         try {
-            Image img = ImageIO.read(getClass().getResource("./xnor.gif"));
+            Image img = ImageIO.read(getClass().getResource("img./xnor.gif"));
             xnorbutton.setIcon(new ImageIcon(img));
         } catch (Exception ex) {
             System.out.println(ex);
