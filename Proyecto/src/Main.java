@@ -7,6 +7,13 @@ import javax.swing.*;
 
 public class Main {
 
+    static int currentComponentID = 0;
+    static int currentConnectorID = 0;
+    static int currentConnectionID = 0;
+    static String mode = "";
+    static boolean showInputs = true, showOutputs = true;
+    static Output selectedOutput = null;
+
     //Ventana:
     static JFrame frame = new JFrame("");
     static Screen drawPanel = new Screen();
@@ -100,5 +107,7 @@ public class Main {
         buttonspanel.add(endButton);
         buttonspanel.add(simularButton);
         buttonspanel.add(eraseButton);
+
+
     }
 }
