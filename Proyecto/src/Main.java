@@ -86,3 +86,19 @@ public class Main {
         JButton simularButton = new JButton("Simular");
         JButton eraseButton = new JButton("Borrar");
 
+        //Mostrar botones e imagenes
+
+        buttonspanel.add(andbutton);
+        buttonspanel.add(nandbutton);
+        buttonspanel.add(orbutton);
+        buttonspanel.add(norbutton);
+        buttonspanel.add(notbutton);
+        buttonspanel.add(xorbutton);
+        buttonspanel.add(xnorbutton);
+        buttonspanel.add(coneccionesButton);
+        buttonspanel.add(startButton);
+        buttonspanel.add(endButton);
+        buttonspanel.add(simularButton);
+        buttonspanel.add(eraseButton);
+    }
+}
