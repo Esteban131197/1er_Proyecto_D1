@@ -7,6 +7,9 @@ import javax.swing.*;
 
 public class Main {
 
+    //la razon por la que se usa variables statics, es para tener un valor fijo en la memoria, y asi hacer el llamado
+    //de ese solo valor de manera inmutable, no que se creen nuevos espacio de memoria en cada instancia.
+
     static int currentComponentID = 0;
     static int currentConnectorID = 0;
     static int currentConnectionID = 0;
@@ -15,7 +18,7 @@ public class Main {
     static Output selectedOutput = null;
 
     //Ventana:
-    private JFrame frame = new JFrame("");
+    static JFrame frame = new JFrame("");
     static Screen drawPanel = new Screen();
 
     Main() {
