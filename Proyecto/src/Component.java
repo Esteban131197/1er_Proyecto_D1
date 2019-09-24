@@ -3,6 +3,7 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
@@ -50,11 +51,10 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
     }
 
     @Override
-    public void paintComponent(Graphics g) { //displays component depending on the your Main.modes and stuff
-        //this gets called on drawPanel.repaint()
+    public void paintComponent(Graphics g) {
+        //este metodo es para repain en mi panel
 
         super.paintComponent(g);
-
         Graphics2D g2d = (Graphics2D) g;
 
         if (Main.showInputs) { //inputs only shown when appropriate
@@ -62,7 +62,6 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
                 inputs.get(x).paintConnector(g2d);
             }
         }
-
         else {
             for (int x=0; x<toggles.size();x++) {
                 toggles.get(x).paintConnector(g2d);
@@ -77,4 +76,15 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
             }
         }
     }
+
+    //esto para mi click and drag
+    int startDragX, startDragY;
+    boolean inDrag = false;
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+
 }
