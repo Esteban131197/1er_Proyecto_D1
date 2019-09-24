@@ -59,4 +59,9 @@ public class Mi_Lista {
         return longitud;
     }
 
+    public boolean estaVacio(){
+        return cabeza == null;
+    }
+
+
 }
