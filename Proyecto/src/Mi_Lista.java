@@ -63,5 +63,31 @@ public class Mi_Lista {
         return cabeza == null;
     }
 
+    public void remove(Connection o) {
+        //eliminar
+        if(cabeza != null){
+            int n = 0;
+            if(n==0) {
+                Nodo primer = cabeza;
+                cabeza = cabeza.siguiente;
+                primer.siguiente = null;
+                longitud--;
+
+            }else if (n < longitud){
+                Nodo puntero = cabeza;
+                int contador = 0;
+                while (contador < (n - 1)) {
+                    puntero = puntero.siguiente;
+                    contador++;
+                }
+                Nodo temp = puntero.siguiente;
+                puntero.siguiente = temp.siguiente;
+                temp.siguiente = null;
+                longitud--;
+            }
+        }
+
+    }
+
 
 }
