@@ -55,4 +55,8 @@ public class Mi_Lista {
         }
     }
 
+    public int size(){ //tama;o
+        return longitud;
+    }
+
 }
