@@ -4,8 +4,8 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
-public class NorGate extends Component { // Nor Gate class
-    NorGate(int ID, int x, int y) {
+public class NOR extends Component { // Nor Gate class
+    NOR(int ID, int x, int y) {
         super(ID, "NOR",  x, y); //adding to the component constructor, not replacing it
         type = "Nor";
         //formatting:
