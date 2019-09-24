@@ -125,9 +125,16 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
             Main.mode = "";
 
         }
-        startDragX = e.getX(); // localizacion del click
-        startDragY = e.getY(); // localizacion del click
+        // localizacion/posicion del click
+        startDragX = e.getX();
+        startDragY = e.getY();
     }
 
+    @Override
+    public void mouseReleased(MouseEvent e) { //when you release the mouse from a click and drag
+        if (inDrag) {
+            inDrag = false;
+        }
+    }
 
 }
