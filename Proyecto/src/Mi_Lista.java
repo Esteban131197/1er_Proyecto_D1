@@ -36,4 +36,23 @@ public class Mi_Lista {
         longitud++;
     }
 
+    public B get(int n){ //obtener
+        if (cabeza == null){
+            return null;
+        }else{
+            Nodo puntero = cabeza;
+            int contador = 0;
+            while(contador < n && puntero.siguiente != null){
+                puntero = puntero.siguiente;
+                contador++;
+            }
+            if (contador!= n){
+                return null;
+            }else{
+                return (B) puntero.component;
+            }
+
+        }
+    }
+
 }
