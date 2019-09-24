@@ -25,3 +25,14 @@ abstract class Connector { //clase de manera "general" para mis outputs e inputs
         this.y = y;
     }
 
+    boolean isAvailable() {
+        if (component.type.equals("Start") && this.isInput) {
+            //things making sure of that
+            return false;
+        }
+        else {
+            return (connections.size() < maxConnections);
+        }
+
+    }
+
