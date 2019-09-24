@@ -1,26 +1,28 @@
+import Compuertas.*;
+
 import java.awt.event.MouseEvent;
 
 public class Factory {
     public static Component ComponentFactory(TypeComponent type, MouseEvent e) {
         if (type == TypeComponent.AND) {
-            return new AndGate(Main.currentComponentID, e.getX(), e.getY());
+            return new AND(Main.currentComponentID, e.getX(), e.getY());
         }
         if (type == TypeComponent.OR) {
-            return new OrGate(Main.currentComponentID, e.getX(), e.getY());
+            return new OR(Main.currentComponentID, e.getX(), e.getY());
         }
         if (type == TypeComponent.NAND) {
-            return new NandGate(Main.currentComponentID, e.getX(), e.getY());
+            return new NAND(Main.currentComponentID, e.getX(), e.getY());
         }
         if (type == TypeComponent.NOR) {
-            return new NorGate(Main.currentComponentID, e.getX(), e.getY());
+            return new NOR(Main.currentComponentID, e.getX(), e.getY());
         }
         if (type == TypeComponent.NOT) {
-            return new NotGate(Main.currentComponentID, e.getX(), e.getY());
+            return new NOT(Main.currentComponentID, e.getX(), e.getY());
         }
         if (type == TypeComponent.XNOR) {
-            return new XnorGate(Main.currentComponentID, e.getX(), e.getY());
+            return new XNOR(Main.currentComponentID, e.getX(), e.getY());
         } else {
-            return new XorGate(Main.currentComponentID, e.getX(), e.getY());
+            return new XOR(Main.currentComponentID, e.getX(), e.getY());
         }
     }
 }
