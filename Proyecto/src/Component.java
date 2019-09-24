@@ -86,5 +86,9 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
 
     }
 
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
 
 }
