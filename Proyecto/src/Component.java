@@ -26,6 +26,26 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
     Mi_Lista<Input> toggles = new Mi_Lista<>(); // list lo que contiene un input
     Mi_Lista<Output> outputs = new Mi_Lista<>();//lista de outputs
 
+    public Component(int ID, String text, int x, int y) {
 
+        super(text);
+        id = ID;
+        Main.currentComponentID++;
+
+        Main.components.add(this);
+        addMouseListener(this);
+        addMouseMotionListener(this);
+        Main.drawPanel.add(this);
+    }
+
+    public void addOutput(Output o) {
+        outputs.add(o);
+    }
+    public void addInput(Input i) {
+        inputs.add(i);
+    }
+    public void addtoToggles(Input i) {
+        toggles.add(i);
+    }
 
 }
