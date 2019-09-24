@@ -131,10 +131,48 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) { //when you release the mouse from a click and drag
+    public void mouseReleased(MouseEvent e) {
         if (inDrag) {
             inDrag = false;
         }
     }
 
-}
+    @Override
+    public void mouseClicked(MouseEvent e) { //Con este evento doy manejo a mis listas con respecto a lo que clickeo
+
+        for (int x = 0; x<inputs.size(); x++) {
+            if (inputs.get(x).component.type.equals("Start") && inputs.get(x).contains(e.getPoint())){
+                System.out.println("testtoggle");
+                inputs.get(x).component.toggle();
+            }
+        }
+        if (Main.mode.equals("choosingInput"))
+            for (int x=0; x<inputs.size();x++) {
+                if (inputs.get(x).isAvailable() && inputs.get(x).contains(e.getPoint())) {
+
+                    Main.lines.add(new Connection(Main.currentConnectionID, Main.selectedOutput, inputs.get(x)));
+
+                    Main.drawPanel.repaint();
+                    Main.mode = "";
+                    Main.showOutputs = true;
+
+                }
+            }
+        }
+        if (Main.mode.equals("choosingOutput")) {
+            for (int x=0; x<outputs.size(); x++) {
+                if (outputs.get(x).isAvailable() && outputs.get(x).contains(e.getPoint())) {
+
+                    Main.selectedOutput = outputs.get(x);
+                    Main.showOutputs = false;
+                    Main.mode = "choosingInput";
+                    Main.showInputs = true;
+
+                    Main.drawPanel.repaint();
+
+                }
+            }
+        }
+
+
+
