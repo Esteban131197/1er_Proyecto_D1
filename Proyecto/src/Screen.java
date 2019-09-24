@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import Compuertas.*;
 
 public class Screen extends JPanel { //canvas
     Screen() {
@@ -45,7 +46,7 @@ public class Screen extends JPanel { //canvas
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
         System.out.println(Main.lines.size());
-        for (int x = 0; x<Main.lines.size(); x++) { //paints all the lines in the world
+        for (int x = 0; x<Main.lines.size(); x++) {
             Main.lines.get(x).paintConnection(g2d);
         }
     }

@@ -1,3 +1,5 @@
+import Compuertas.*;
+
 public enum TypeComponent {
     AND,
     NAND,

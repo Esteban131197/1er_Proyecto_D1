@@ -1,5 +1,4 @@
 import Compuertas.*;
-
 import java.awt.event.MouseEvent;
 
 public class Factory {

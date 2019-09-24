@@ -1,3 +1,4 @@
+import Compuertas.*;
 import java.awt.*;
 
 abstract class Connector { //clase de manera "general" para mis outputs e inputs

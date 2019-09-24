@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.util.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
+import Compuertas.*;
 public class Main {
 
     //la razon por la que se usa variables statics, es para tener un valor fijo en la memoria, y asi hacer el llamado

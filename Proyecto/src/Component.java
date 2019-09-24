@@ -1,6 +1,6 @@
 //En esta clase hago metodos y eventos necesarios para que mi interfaz use la lista
 //Esta clase sera la que le herede a mis compuertas, mi simulacion y mi resultado de simulacion
-
+import Compuertas.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;

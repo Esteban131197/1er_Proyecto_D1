@@ -1,4 +1,5 @@
 import java.awt.*;
+import Compuertas.*;
 
 public class Output extends Connector {
 
