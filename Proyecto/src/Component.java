@@ -2,6 +2,7 @@
 //Esta clase sera la que le herede a mis compuertas, mi simulacion y mi resultado de simulacion
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
@@ -48,4 +49,32 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
         toggles.add(i);
     }
 
+    @Override
+    public void paintComponent(Graphics g) { //displays component depending on the your Main.modes and stuff
+        //this gets called on drawPanel.repaint()
+
+        super.paintComponent(g);
+
+        Graphics2D g2d = (Graphics2D) g;
+
+        if (Main.showInputs) { //inputs only shown when appropriate
+            for (int x=0; x<inputs.size(); x++) {
+                inputs.get(x).paintConnector(g2d);
+            }
+        }
+
+        else {
+            for (int x=0; x<toggles.size();x++) {
+                toggles.get(x).paintConnector(g2d);
+            }
+        }
+        if (Main.showOutputs) {
+            for (int x=0; x<outputs.size(); x++) { //outputs only shown when appropriate
+                if (outputs.get(x).isAvailable()) {
+                    outputs.get(x).paintConnector(g2d);
+                }
+
+            }
+        }
+    }
 }
