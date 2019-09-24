@@ -91,4 +91,43 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
 
     }
 
+    @Override
+    public void mousePressed(MouseEvent e) { //Evento que me permite clickear para hacer el click-and-drag (ref.)
+
+        System.out.println(Main.mode);
+        if (Main.mode.equals("erase")) {
+
+            Main.drawPanel.remove(this);
+            Main.components.remove(this);
+
+            for (int x=0; x<this.outputs.size();x++) {
+                for (Connection connection : inputs.connections) {
+                    //for(int y=0; y<inputs.connection.size();y++)
+                    Main.drawPanel.remove(connection);
+                    Main.lines.remove(connection);
+
+                    connection.output.connections.remove(connection);
+
+                }
+                inputs.get(x).connections.remove(inputs.get(x).connections);
+            }
+            for (int x=0; x<outputs.size(); x++) {
+                for (Connection connection : outputs.connections) {
+                    Main.drawPanel.remove(connection);
+                    Main.lines.remove(connection);
+
+                    connection.input.connections.remove(connection);
+                }
+                outputs.get(x).connections.remove(outputs.get(x).connections);
+            }
+
+            Main.drawPanel.repaint();
+            Main.mode = "";
+
+        }
+        startDragX = e.getX(); // localizacion del click
+        startDragY = e.getY(); // localizacion del click
+    }
+
+
 }
