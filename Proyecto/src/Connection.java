@@ -9,13 +9,25 @@ public class Connection extends JComponent {
     int id;
 
     public Connection(int ID, Output theOutput, Input theInput) {
-        setDoubleBuffered(true); //graphics stuff - may or may not be necessary, but it does no harm
+
+        setDoubleBuffered(true); //Esto puede ser presindible, se deja para evitar errores
         id = ID;
         Main.currentConnectionID++;
 
         this.output = theOutput;
         this.input = theInput;
-        if (output.isAvailable()) output.connections.add(this); //only make line if the outputs/inputs aren't already taken
-        if (input.isAvailable()) input.connections.add(this); //^^
+        if (output.isAvailable()) output.connections.add(this); //Solo lineas entre inputs y outputs!!!
+        if (input.isAvailable()) input.connections.add(this);
     }
 
+    public void paintConnection(Graphics2D g2d) { //Dibujo de las lineas
+
+        Line2D.Double line = new Line2D.Double(output.getX(), output.getY(), input.getX(), input.getY());
+        g2d.draw(line);
+        output.inputsReceivingThis.add(input);
+        if (Main.mode.equals("choosingInput")) {
+            input.component.numberConnected +=1;
+
+        }
+    }
+}
