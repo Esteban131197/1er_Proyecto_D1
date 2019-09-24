@@ -41,3 +41,24 @@ abstract class Connector { //clase de manera "general" para mis outputs e inputs
     public int getX() {
         return component.getX() + x;
     }
+
+    public int getY() {
+        return component.getY() + y;
+    }
+    public boolean contains(Point p) { //Me muestra donde puerdo hacer conneciones entre input y output
+        return shape.contains(p);
+    }
+    public void paintConnector(Graphics2D g2d) { //dibujar el conector
+        if (isAvailable()) {
+            g2d.setColor(color);
+        }
+        else if (component.type.equals("Start")) { //entradas de diferente color
+            g2d.setColor(Color.pink);
+
+        }
+        else {
+            g2d.setColor(Color.lightGray);
+        }
+        g2d.fill(shape);
+    }
+}
