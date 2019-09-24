@@ -1,4 +1,4 @@
-public class Mi_Lista {
+public class Mi_Lista <B>{
 
     public Mi_Lista<Object> connections;
     private Nodo cabeza = null;
