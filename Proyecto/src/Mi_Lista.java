@@ -15,4 +15,25 @@ public class Mi_Lista {
         }
     }
 
+    public void add(B o) {
+
+        //insertar
+        Component component = null;
+        Nodo nodo = new Nodo(component);
+        if (cabeza == null){
+            cabeza = nodo;
+        }else{
+            Nodo puntero = cabeza;
+            int contador = 0;
+            int n = 0;
+            while(contador < n && puntero.siguiente != null){
+                puntero = puntero.siguiente;
+                contador++;
+            }
+            nodo.siguiente = puntero.siguiente;
+            puntero.siguiente = nodo;
+        }
+        longitud++;
+    }
+
 }
