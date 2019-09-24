@@ -12,7 +12,7 @@ public class Screen extends JPanel { //canvas
                 //Se implementa patron de diseño FACTORY
                 if (Main.mode.equals("addingAnd")) {
                     Component c = new Factory().ComponentFactory(TypeComponent.AND, e);
-                } else if (Main.mode.equals("addingOr")) {/
+                } else if (Main.mode.equals("addingOr")) {
                     Component c = new Factory().ComponentFactory(TypeComponent.OR, e);
                 } else if (Main.mode.equals("addingNot")) {
                     Component c= new Factory().ComponentFactory(TypeComponent.NOT,e);
@@ -39,7 +39,7 @@ public class Screen extends JPanel { //canvas
     }
 
     @Override
-    public void paintComponent(Graphics g) { /
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,

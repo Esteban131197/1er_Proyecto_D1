@@ -9,7 +9,7 @@ public class StartPoint extends Component {
         super(ID, "Start", x, y);
         type = "Start";
         value = 0;
-        this.setText(Integer.toString(value)); /
+        this.setText(Integer.toString(value));
         //formato:
         setVerticalAlignment(SwingConstants.CENTER);
         setHorizontalAlignment(SwingConstants.CENTER);
@@ -25,7 +25,7 @@ public class StartPoint extends Component {
     boolean isAvailable() {
         return false;
     }
-    public boolean operation(Mi_Lista<Boolean> args) { /
+    public boolean operation(Mi_Lista<Boolean> args) {
 
         return outputs.get(0).value;
     }
