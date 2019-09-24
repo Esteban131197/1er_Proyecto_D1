@@ -174,5 +174,19 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
             }
         }
 
+    @Override
+    //el "drag" del click-and-drag
+    public void mouseDragged(MouseEvent e) {
+        int newX = getX()  + (e.getX() -startDragX); //con esto muevo mis compuertas
+        int newY = getY() + (e.getY() -startDragY);
+        setLocation(newX, newY);
+        inDrag = true;
+        Main.drawPanel.repaint();
+        Main.frame.repaint();
+    }
+    @Override
+    public void mouseMoved(MouseEvent arg0) {
 
+    }
+}
 
