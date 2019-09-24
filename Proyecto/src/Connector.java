@@ -15,3 +15,13 @@ abstract class Connector { //clase de manera "general" para mis outputs e inputs
     Shape shape;
     Color color;
 
+    Connector(int ID, Component c, int x, int y) {
+
+        id = ID;
+        Main.currentConnectorID++;
+
+        this.component = c;
+        this.x = x;
+        this.y = y;
+    }
+
