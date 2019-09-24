@@ -25,7 +25,7 @@ abstract class Connector { //clase de manera "general" para mis outputs e inputs
         this.y = y;
     }
 
-    boolean isAvailable() {
+    boolean isAvailable() { //Para comprobar si puedo trabajar con un output o input
         if (component.type.equals("Start") && this.isInput) {
             //things making sure of that
             return false;
@@ -33,6 +33,11 @@ abstract class Connector { //clase de manera "general" para mis outputs e inputs
         else {
             return (connections.size() < maxConnections);
         }
-
     }
 
+    void addConnection(Connection con) {
+        if (isAvailable()) connections.add(con);
+    }
+    public int getX() {
+        return component.getX() + x;
+    }
