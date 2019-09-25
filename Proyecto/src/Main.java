@@ -1,7 +1,8 @@
+package Logica;
+
 import javafx.stage.Screen;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import Compuertas.*;

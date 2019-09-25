@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
-public class ORextends Component {
+public class OR extends Component {
     OR(int ID, int x, int y) {
         super(ID, "OR",  x, y);
         type = "Or";
@@ -17,6 +17,9 @@ public class ORextends Component {
         new Input(Main.currentConnectorID, this, 0, 6);
         new Input(Main.currentConnectorID, this, 0, getHeight() - 6);
         new Output(Main.currentConnectorID, this, getWidth(), getHeight() / 2);
+    }
+
+    private void setVerticalAlignment(int center) {
     }
 
     public boolean operation(Mi_Lista<Boolean> args) {
