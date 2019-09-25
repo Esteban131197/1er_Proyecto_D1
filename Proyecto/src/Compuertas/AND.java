@@ -1,11 +1,12 @@
 package Compuertas;
+import Logicaa.Main;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class AND extends Component {
-    AND(int ID, int x, int y) {
+    public AND(int ID, int x, int y) {
         super(ID, "AND",  x, y);
         type = "And";
         //formato:

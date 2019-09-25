@@ -5,7 +5,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class NOR extends Component {
-    NOR(int ID, int x, int y) {
+    public NOR(int ID, int x, int y) {
         super(ID, "NOR",  x, y);
         type = "Nor";
         //formato:

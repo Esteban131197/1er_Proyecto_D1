@@ -5,7 +5,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class OR extends Component {
-    OR(int ID, int x, int y) {
+    public OR(int ID, int x, int y) {
         super(ID, "OR",  x, y);
         type = "Or";
         //formato:

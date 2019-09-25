@@ -5,7 +5,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class XOR extends Component {
-    XOR(int ID, int x, int y) {
+    public XOR(int ID, int x, int y) {
         super(ID, "XOR",  x, y);
         type = "Xor";
         //formato:

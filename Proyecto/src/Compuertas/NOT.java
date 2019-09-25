@@ -5,7 +5,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class NOT extends Component {
-    NOT(int ID, int x, int y) {
+    public NOT(int ID, int x, int y) {
         super(ID, "NOT",  x, y);
         type = "Not";
         //formato:

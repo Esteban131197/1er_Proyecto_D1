@@ -5,7 +5,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class NAND extends Component {
-    NAND(int ID, int x, int y) {
+    public NAND(int ID, int x, int y) {
         super(ID, "NAND",  x, y);
         type = "Nand";
         //formato:

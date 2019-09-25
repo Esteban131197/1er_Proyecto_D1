@@ -5,7 +5,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class XNOR extends Component {
-    XNOR(int ID, int x, int y) {
+    public XNOR(int ID, int x, int y) {
         super(ID, "XNOR",  x, y);
         type = "Xnor";
         //formato:
