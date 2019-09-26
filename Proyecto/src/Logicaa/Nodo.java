@@ -1,15 +1,20 @@
 package Logicaa;
 
 public class Nodo<T> {
-    public T componente;
+    public T component;
     public Nodo<T> siguiente = null;
 
-    public Nodo(T componente){
-        this.componente = componente;
+    public Nodo(T component){
+        this.component = component;
     }
 
-    public T getComponente() {
-        return componente;
+    public void setNext(Nodo<T> next)
+    {
+        this.siguiente = next;
+    }
+
+    public T getComponent() {
+        return component;
     }
 }
 
