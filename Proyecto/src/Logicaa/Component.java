@@ -48,7 +48,7 @@ public class Component extends JLabel implements MouseListener, MouseMotionListe
 
         super(text);
         id = ID;
-        Main.ID_componente++;
+        Main.currentComponentID++;
 
         Main.componentes.add(this);
         addMouseListener(this);

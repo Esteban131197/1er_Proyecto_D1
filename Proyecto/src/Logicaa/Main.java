@@ -27,7 +27,7 @@ public class Main {
 
     static Mi_Lista <Component>componentes = new Mi_Lista();
     static Mi_Lista <Connection> lineas = new Mi_Lista();
-    static int ID_componente = 0;
+    static int currentComponentID = 0;
     static int currentConnectorID = 0;
     static int currentConnectionID = 0;
     static String modo = "";

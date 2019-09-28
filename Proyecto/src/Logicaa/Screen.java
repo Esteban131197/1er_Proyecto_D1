@@ -31,10 +31,10 @@ public class Screen extends JPanel {
                     Component c= (Component) new Factory().ComponentFactory(TypeComponent.XNOR,e);
 
                 } else if (Main.modo.equals("addingStart")) {
-                    Component c = new StartPoint(Main.ID_componente, e.getX(), e.getY());
+                    Component c = new StartPoint(Main.currentComponentID, e.getX(), e.getY());
 
                 } else if (Main.modo.equals("addingEnd")) {
-                    Component c = new EndPoint(Main.ID_componente, e.getX(), e.getY());
+                    Component c = new EndPoint(Main.currentComponentID, e.getX(), e.getY());
                 }
                 Main.modo = "";
 
