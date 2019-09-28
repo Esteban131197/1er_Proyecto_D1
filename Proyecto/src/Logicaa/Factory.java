@@ -17,24 +17,24 @@ public class Factory {
 
     public static Component ComponentFactory(TypeComponent type, MouseEvent e) {
         if (type == TypeComponent.AND) {
-            return new AND(Main.currentComponentID, e.getX(), e.getY());
+            return new AND(Main.ID_componente, e.getX(), e.getY());
         }
         if (type == TypeComponent.OR) {
-            return new OR(Main.currentComponentID, e.getX(), e.getY());
+            return new OR(Main.ID_componente, e.getX(), e.getY());
         }
         if (type == TypeComponent.NAND) {
-            return new NAND(Main.currentComponentID, e.getX(), e.getY());
+            return new NAND(Main.ID_componente, e.getX(), e.getY());
         }
         if (type == TypeComponent.NOR) {
-            return new NOR(Main.currentComponentID, e.getX(), e.getY());
+            return new NOR(Main.ID_componente, e.getX(), e.getY());
         }
         if (type == TypeComponent.NOT) {
-            return new NOT(Main.currentComponentID, e.getX(), e.getY());
+            return new NOT(Main.ID_componente, e.getX(), e.getY());
         }
         if (type == TypeComponent.XNOR) {
-            return new XNOR(Main.currentComponentID, e.getX(), e.getY());
+            return new XNOR(Main.ID_componente, e.getX(), e.getY());
         } else {
-            return new XOR(Main.currentComponentID, e.getX(), e.getY());
+            return new XOR(Main.ID_componente, e.getX(), e.getY());
         }
     }
 }

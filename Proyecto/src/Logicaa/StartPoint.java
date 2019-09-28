@@ -4,6 +4,12 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
+/**
+ *Clase StarPoint
+ * Los puntos de inicio son los unicos componentes con un valor default
+ * Otros componentes solo almacenan valores en sus entradas o salidas
+ * */
+
 public class StartPoint extends Component {
 
     StartPoint(int ID, int x, int y) {
@@ -29,6 +35,11 @@ public class StartPoint extends Component {
 
         return outputs.get(0).value;
     }
+
+    /**
+     * Este metodo se encarga de pasar o hacer un "switch" en los valores del puntoInicial
+     * */
+
     public void toggle() {
         System.out.println("toggling");
         value +=1;

@@ -25,13 +25,14 @@ public class Main {
     //la razon por la que se usa variables statics, es para tener un valor fijo en la memoria, y asi hacer el llamado
     //de ese solo valor de manera inmutable, no que se creen nuevos espacio de memoria en cada instancia.
 
-    static Mi_Lista <Component>components = new Mi_Lista();
-    static Mi_Lista <Connection> lines = new Mi_Lista();
-    static int currentComponentID = 0;
+    static Mi_Lista <Component>componentes = new Mi_Lista();
+    static Mi_Lista <Connection> lineas = new Mi_Lista();
+    static int ID_componente = 0;
     static int currentConnectorID = 0;
     static int currentConnectionID = 0;
-    static String mode = "";
-    static boolean showInputs = true, showOutputs = true;
+    static String modo = "";
+    static boolean mostrarInputs = true;
+    static boolean mostrarOutputs = true;
     static Output selectedOutput = null;
 
     //Ventana:
@@ -108,7 +109,7 @@ public class Main {
             System.out.println(ex);
         }
 
-        JButton coneccionesButton = new JButton("Hilos");
+        JButton coneccionesButton = new JButton("Lineas");
         JButton startButton = new JButton("Entrada");
         JButton endButton = new JButton("Salida");
         JButton simularButton = new JButton("Simular");
@@ -219,50 +220,50 @@ public class Main {
 
 
     void makeAnd() {
-        mode = "addingAnd";
+        modo = "addingAnd";
     }
 
     void makeNand() {
-        mode = "addingNand";
+        modo = "addingNand";
     }
 
     void makeOr() {
-        mode = "addingOr";
+        modo = "addingOr";
     }
 
     void makeNor() {
-        mode = "addingNor";
+        modo = "addingNor";
     }
 
     void makeNot() {
-        mode = "addingNot";
+        modo = "addingNot";
     }
 
     void makeXor() {
-        mode = "addingXor";
+        modo = "addingXor";
     }
 
     void makeXnor() {
-        mode = "addingXnor";
+        modo = "addingXnor";
     }
 
     void makeConnection() {
-        mode = "choosingOutput";
-        showInputs = false;
-        showOutputs = true;
+        modo = "choosingOutput";
+        mostrarInputs = false;
+        mostrarOutputs = true;
         drawPanel.repaint(); //repaint = refrescar la interfaz
     }
 
     void makeStart() {
-        mode = "addingStart";
+        modo = "addingStart";
     }
 
     void makeEnd() {
-        mode = "addingEnd";
+        modo = "addingEnd";
     }
 
     void makeErase() {
-        mode = "erase";
+        modo = "erase";
     }
 
     /**
@@ -278,7 +279,7 @@ public class Main {
             keepGoing++;
             int endsReached = 0;
 
-            for (Component gate : components) {
+            for (Component gate : componentes) {
                 boolean act = true;
                 Mi_Lista<Boolean> inputValues = new Mi_Lista<>();
                 for (Input input : gate.inputs) {
@@ -332,7 +333,7 @@ public class Main {
                         }
 
                         Mi_Lista<Component> endPoints = new Mi_Lista<>();
-                        for (Component component : components) {
+                        for (Component component : componentes) {
                             if (component.type.equals("End")) {
                                 endPoints.add(component);
                             }

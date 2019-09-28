@@ -15,28 +15,28 @@ public class Screen extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 //Se implementa patron de diseño FACTORY
-                if (Main.mode.equals("addingAnd")) {
+                if (Main.modo.equals("addingAnd")) {
                     Component c = (Component) new Factory().ComponentFactory(TypeComponent.AND, e);
-                } else if (Main.mode.equals("addingOr")) {
+                } else if (Main.modo.equals("addingOr")) {
                     Component c = (Component) new Factory().ComponentFactory(TypeComponent.OR, e);
-                } else if (Main.mode.equals("addingNot")) {
+                } else if (Main.modo.equals("addingNot")) {
                     Component c= (Component) new Factory().ComponentFactory(TypeComponent.NOT,e);
-                } else if (Main.mode.equals("addingNand")) {
+                } else if (Main.modo.equals("addingNand")) {
                     Component c= (Component) new Factory().ComponentFactory(TypeComponent.NAND,e);
-                } else if (Main.mode.equals("addingNor")) {
+                } else if (Main.modo.equals("addingNor")) {
                     Component c= (Component) new Factory().ComponentFactory(TypeComponent.NOR,e);
-                } else if (Main.mode.equals("addingXor")) {
+                } else if (Main.modo.equals("addingXor")) {
                     Component c= (Component) new Factory().ComponentFactory(TypeComponent.XOR,e);;
-                } else if (Main.mode.equals("addingXnor")) {
+                } else if (Main.modo.equals("addingXnor")) {
                     Component c= (Component) new Factory().ComponentFactory(TypeComponent.XNOR,e);
 
-                } else if (Main.mode.equals("addingStart")) {
-                    Component c = new StartPoint(Main.currentComponentID, e.getX(), e.getY());
+                } else if (Main.modo.equals("addingStart")) {
+                    Component c = new StartPoint(Main.ID_componente, e.getX(), e.getY());
 
-                } else if (Main.mode.equals("addingEnd")) {
-                    Component c = new EndPoint(Main.currentComponentID, e.getX(), e.getY());
+                } else if (Main.modo.equals("addingEnd")) {
+                    Component c = new EndPoint(Main.ID_componente, e.getX(), e.getY());
                 }
-                Main.mode = "";
+                Main.modo = "";
 
                 Main.drawPanel.repaint();
             }
@@ -54,8 +54,8 @@ public class Screen extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
-        System.out.println(Main.lines.size());
-        for (Connection line : Main.lines) {
+        System.out.println(Main.lineas.size());
+        for (Connection line : Main.lineas) {
             line.paintConnection(g2d);
         }
     }

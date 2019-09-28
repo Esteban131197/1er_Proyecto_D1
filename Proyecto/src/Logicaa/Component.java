@@ -48,9 +48,9 @@ public class Component extends JLabel implements MouseListener, MouseMotionListe
 
         super(text);
         id = ID;
-        Main.currentComponentID++;
+        Main.ID_componente++;
 
-        Main.components.add(this);
+        Main.componentes.add(this);
         addMouseListener(this);
         addMouseMotionListener(this);
         Main.drawPanel.add(this);
@@ -74,7 +74,7 @@ public class Component extends JLabel implements MouseListener, MouseMotionListe
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        if (Main.showInputs) {
+        if (Main.mostrarInputs) {
             for (Input in : inputs) {
                 in.paintConnector(g2d);
             }
@@ -83,7 +83,7 @@ public class Component extends JLabel implements MouseListener, MouseMotionListe
                 tog.paintConnector(g2d);
             }
         }
-        if (Main.showOutputs) {
+        if (Main.mostrarOutputs) {
             for (Output out : outputs) {
                 if (out.isAvailable()) {
                     out.paintConnector(g2d);
@@ -112,17 +112,17 @@ public class Component extends JLabel implements MouseListener, MouseMotionListe
     @Override
     public void mousePressed(MouseEvent e) { //Evento que me permite clickear para hacer el click-and-drag (ref.)
 
-        System.out.println(Main.mode);
-        if (Main.mode.equals("erase")) {
+        System.out.println(Main.modo);
+        if (Main.modo.equals("erase")) {
 
             Main.drawPanel.remove(this);
-            Main.components.remove(this);
+            Main.componentes.remove(this);
 
             for (Input input : this.inputs) {
                 for (Connection connection : input.connections) {
 
                     Main.drawPanel.remove(connection);
-                    Main.lines.remove(connection);
+                    Main.lineas.remove(connection);
 
                     connection.output.connections.remove(connection);
                 }
@@ -132,7 +132,7 @@ public class Component extends JLabel implements MouseListener, MouseMotionListe
             for (Output output : this.outputs) {
                 for (Connection connection : output.connections) {
                     Main.drawPanel.remove(connection);
-                    Main.lines.remove(connection);
+                    Main.lineas.remove(connection);
 
                     connection.input.connections.remove(connection);
                 }
@@ -140,7 +140,7 @@ public class Component extends JLabel implements MouseListener, MouseMotionListe
             }
 
             Main.drawPanel.repaint();
-            Main.mode = "";
+            Main.modo = "";
         }
         // localizacion/posicion del click
         startDragX = e.getX();
@@ -167,26 +167,26 @@ public class Component extends JLabel implements MouseListener, MouseMotionListe
                 in.component.toggle();
             }
         }
-        if (Main.mode.equals("choosingInput")) {
+        if (Main.modo.equals("choosingInput")) {
             for (Input in : inputs) {
                 if (in.isAvailable() && in.contains(e.getPoint())) {
 
-                    Main.lines.add(new Connection(Main.currentConnectionID, Main.selectedOutput, in));
+                    Main.lineas.add(new Connection(Main.currentConnectionID, Main.selectedOutput, in));
                     Main.drawPanel.repaint();
-                    Main.mode = "";
-                    Main.showOutputs = true;
+                    Main.modo = "";
+                    Main.mostrarOutputs = true;
                 }
             }
         }
 
-        if (Main.mode.equals("choosingOutput")) {
+        if (Main.modo.equals("choosingOutput")) {
             for (Output out : outputs) {
                 if (out.isAvailable() && out.contains(e.getPoint())) {
 
                     Main.selectedOutput = out;
-                    Main.showOutputs = false;
-                    Main.mode = "choosingInput";
-                    Main.showInputs = true;
+                    Main.mostrarOutputs = false;
+                    Main.modo = "choosingInput";
+                    Main.mostrarInputs = true;
                     Main.drawPanel.repaint();
                 }
             }

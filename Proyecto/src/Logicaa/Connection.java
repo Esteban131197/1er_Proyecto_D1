@@ -36,7 +36,7 @@ public class Connection extends JComponent {
         Line2D.Double line = new Line2D.Double(output.getX(), output.getY(), input.getX(), input.getY());
         g2d.draw(line);
         output.inputsReceivingThis.add(input);
-        if (Main.mode.equals("choosingInput")) {
+        if (Main.modo.equals("choosingInput")) {
             input.component.numberConnected +=1;
 
         }
