@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Line2D;
 
+/**
+ *  Clase Connection
+ *  Esta clase conecta todos los componentes juntos por sus entradas y salidas (conectores)
+ * */
 
 public class Connection extends JComponent {
 
@@ -22,6 +26,10 @@ public class Connection extends JComponent {
         if (output.isAvailable()) output.connections.add(this); //Solo lineas entre inputs y outputs!!!
         if (input.isAvailable()) input.connections.add(this);
     }
+
+    /**
+     * Este metodo dibuja las lineas para asociar las conexiones
+     * */
 
     public void paintConnection(Graphics2D g2d) { //Dibujo de las lineas
 

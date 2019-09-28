@@ -8,15 +8,25 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.JLabel;
 
 
-
+/**
+ * Esta clase es la clase padre para todos los componentes
+ *Maneja tanto eventos como metodos que se heredan a las compuertas, el metodo de simulacion, entradas y salidas.
+ * */
 //En esta clase hago metodos y eventos necesarios para que mi interfaz use la lista
 //Esta clase sera la que le herede a mis compuertas, mi simulacion y mi resultado de simulacion
 
-abstract class Component extends JLabel implements MouseListener, MouseMotionListener {
+public class Component extends JLabel implements MouseListener, MouseMotionListener {
+    /**
+     * Necesarios para que funcione la aplicacion
+     * */
 
     int numberConnected = 0;
     int id;
     String type;
+    /**
+     * Este metodo sobreescribe solo el punto de inicio
+     *
+     * */
 
     public void toggle() {
     }
@@ -55,7 +65,10 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
     public void addtoToggles(Input i) {
         toggles.add(i);
     }
-
+    /**
+     * Este metodo muestra o desplega el componente
+     * Esto se llama en drawPanel.repaint()
+     * */
     @Override
     public void paintComponent(Graphics g) {//este metodo es para repain en mi panel
         super.paintComponent(g);
@@ -92,6 +105,9 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
     public void mouseExited(MouseEvent e) {
 
     }
+    /**
+     * Este es el click de click and drag
+     * */
 
     @Override
     public void mousePressed(MouseEvent e) { //Evento que me permite clickear para hacer el click-and-drag (ref.)
@@ -130,14 +146,18 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
         startDragX = e.getX();
         startDragY = e.getY();
     }
-
+    /**
+     * Este metodo es para cuando se libera el mouse de click and drag
+     * */
     @Override
     public void mouseReleased(MouseEvent e) {
         if (inDrag) {
             inDrag = false;
         }
     }
-
+    /**
+     * Este metodo es para cuando se hace click en un punto de inicio de la entrada (tipo switch) esto pasa al valor inicial
+     * */
     @Override
     public void mouseClicked(MouseEvent e) { //Con este evento doy manejo a mis listas con respecto a lo que clickeo
 
@@ -172,6 +192,10 @@ abstract class Component extends JLabel implements MouseListener, MouseMotionLis
             }
         }
     }
+    /**
+     * Este metodo es el encargado del drag para la plantilla
+     *
+     * */
         @Override
         //el "drag" del click-and-drag
         public void mouseDragged (MouseEvent e){

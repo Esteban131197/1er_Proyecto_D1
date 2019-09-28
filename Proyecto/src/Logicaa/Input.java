@@ -2,6 +2,11 @@ package Logicaa;
 
 import java.awt.*;
 
+/**
+ * Clase input (entrada)
+ * Esta clase es un tipo de conector
+ * */
+
 public class Input extends Connector {
 
     Input(int ID, Component owner, int x, int y) {

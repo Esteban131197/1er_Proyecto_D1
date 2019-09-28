@@ -2,6 +2,11 @@ package Logicaa;
 
 import java.awt.*;
 
+/**
+ * Clase Output (Salida)
+ *Esta clase es un tipo de conector
+ * */
+
 public class Output extends Connector {
 
     Mi_Lista<Input> inputsReceivingThis = new Mi_Lista<>();

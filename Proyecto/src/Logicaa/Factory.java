@@ -3,7 +3,18 @@ package Logicaa;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
+/**
+ *
+ * Esta clase es un factory de la clase componente
+ */
+
 public class Factory {
+
+    /**
+     * Metodo static que selecciona e instancia cada clase, segun el componente.
+     * @return instancia de la clase componente.
+     * */
+
     public static Component ComponentFactory(TypeComponent type, MouseEvent e) {
         if (type == TypeComponent.AND) {
             return new AND(Main.currentComponentID, e.getX(), e.getY());

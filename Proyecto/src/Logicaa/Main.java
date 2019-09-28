@@ -35,7 +35,7 @@ public class Main {
     static Output selectedOutput = null;
 
     //Ventana:
-    static JFrame frame = new JFrame("Circuit Designer");
+    static JFrame frame = new JFrame("Mi circuito");
     static Screen drawPanel = new Screen();
 
     Main() {
@@ -128,6 +128,10 @@ public class Main {
         buttonspanel.add(endButton);
         buttonspanel.add(simularButton);
         buttonspanel.add(eraseButton);
+
+        /**
+         * actionPerformed es el unico metodo del paquete java.awt.event y es invocado al momento de hacer click en algun componente
+         * */
 
         andbutton.addActionListener(new ActionListener() {
             @Override
@@ -261,14 +265,16 @@ public class Main {
         mode = "erase";
     }
 
-
+    /**
+     *  funcion para simular dentro del canvas
+     * */
 
     int simulate() {
-        int toBeReturned = -1;
+        int toBeReturned = -1; // valor de error, se retorna solo en caso de que no funcione la funcion
 
         int keepGoing = 0;
 
-        while (keepGoing < 200) {
+        while (keepGoing < 200) { //ciclo para asegurar que se alcanzo el final del circuito
             keepGoing++;
             int endsReached = 0;
 
@@ -283,7 +289,7 @@ public class Main {
                         inputValues.add(input.value);
                     }
                 }
-                if (act) {
+                if (act) { //Asumiendo que la compuerta tiene valores en sus entradas
                     if (gate.type.equals("User")) {
                         int nextOne=0;
                         for (Output out : gate.outputs) {
@@ -293,7 +299,7 @@ public class Main {
                         }
                     }
                     else {
-                        for (Output out : gate.outputs){
+                        for (Output out : gate.outputs){ // Transfiere valores desde las salidas hasta las entradas que estan conectadas
                             out.value = gate.operation(inputValues);
                         }
                     }
@@ -331,8 +337,8 @@ public class Main {
                                 endPoints.add(component);
                             }
                         }
-                        if (endsReached >= endPoints.size()) {
-                            toBeReturned = 0;
+                        if (endsReached >= endPoints.size()) { // Si todos los modos se alcanzaron con exito, entonces el circuito se completa
+                            toBeReturned = 0;// retorna valor de exito
                         }
                     }
                 }

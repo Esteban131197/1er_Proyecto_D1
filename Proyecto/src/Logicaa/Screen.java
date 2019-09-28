@@ -5,7 +5,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.*;
 
-public class Screen extends JPanel { //the "canvas" for everything
+/**
+ * Esta clase funciona como un canvas para realizar acciones sobre ella
+ **/
+
+public class Screen extends JPanel {
     {
         addMouseListener(new MouseAdapter() {
             @Override
@@ -38,9 +42,14 @@ public class Screen extends JPanel { //the "canvas" for everything
             }
         });
     }
+
+    /**
+     * Este metodo permite llamar al drawPanel.repaint
+     * */
+
     @Override
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        super.paintComponent(g);//Pinta el drawPanel y asocia componentes
 
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,

@@ -5,8 +5,12 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Shape;
 
+/**
+ * La clase Connector es una clase general para las entradas y salidas
+ * Las entradas y salidas son los cuadrados rojos y azules en las compuertas
+ * */
 
-abstract class Connector { //clase de manera "general" para mis outputs e inputs
+public class Connector { //clase de manera "general" para mis outputs e inputs
 
     boolean value; //Valores de inputs y outputs, no de las compuertas
     boolean hasValue = false;
