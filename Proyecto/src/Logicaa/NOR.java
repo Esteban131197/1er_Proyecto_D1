@@ -4,6 +4,10 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+/**
+ * Esta clase representa la compuerta o componente NOR
+ * */
+
 public class NOR extends Component {
     public NOR(int ID, int x, int y) {
         super(ID, "NOR",  x, y);
@@ -18,6 +22,11 @@ public class NOR extends Component {
         new Input(Main.currentConnectorID, this, 0, getHeight() - 6);
         new Output(Main.currentConnectorID, this, getWidth(), getHeight() / 2);
     }
+
+    /**
+     * Este metodo establece la logica de la compuerta para obtener un salida
+     * de acuerdo a su respectiva logica
+     * */
 
     public boolean operation(Mi_Lista<Boolean> args) {
         boolean input1 = args.get(0);

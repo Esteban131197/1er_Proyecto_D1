@@ -4,6 +4,10 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+/**
+ * Esta clase representa la compuerta o componente XNOR
+ * */
+
 public class XNOR extends Component {
     public XNOR(int ID, int x, int y) {
         super(ID, "XNOR",  x, y);
@@ -18,6 +22,11 @@ public class XNOR extends Component {
         new Input(Main.currentConnectorID, this, 0, getHeight() - 6);
         new Output(Main.currentConnectorID, this, getWidth(), getHeight() / 2);
     }
+
+    /**
+     * Este metodo establece la logica de la compuerta para obtener un salida
+     * de acuerdo a su respectiva logica
+     * */
 
     public boolean operation(Mi_Lista<Boolean> args) {
         boolean input1 = args.get(0);
